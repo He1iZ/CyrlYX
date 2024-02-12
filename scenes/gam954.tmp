@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://b656vfwb37c11"]
+
+[ext_resource type="PackedScene" uid="uid://eh28lkrqctl7" path="res://scenes/editor.tscn" id="1_23q6v"]
+[ext_resource type="PackedScene" uid="uid://odvg51kbtbf3" path="res://scenes/game.tscn" id="1_qnom2"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="AudioStreamer" type="AudioStreamPlayer" parent="."]
+
+[node name="MenuUI" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SelectMapsUI" type="Control" parent="MenuUI"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Game" parent="." instance=ExtResource("1_qnom2")]
+layout_mode = 1
+
+[node name="Editor" parent="." instance=ExtResource("1_23q6v")]
+visible = false
+layout_mode = 1

@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://odvg51kbtbf3"]
+
+[ext_resource type="Texture2D" uid="uid://bewbxw1b4kryr" path="res://materials/UI/raw/Subtract.png" id="1_83noa"]
+[ext_resource type="Texture2D" uid="uid://cmm7tvvt41m76" path="res://materials/UI/raw/backgrounds/Rectangle 1586.png" id="2_gwh6w"]
+[ext_resource type="Texture2D" uid="uid://4mn1yw8us8p2" path="res://materials/UI/raw/Vector.png" id="2_ohqg8"]
+[ext_resource type="Script" path="res://scripts/CircleField.gd" id="2_ra2k0"]
+[ext_resource type="PackedScene" uid="uid://debgmpgsom8vr" path="res://prefabs/ui/cursor.tscn" id="3_cillm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgckv"]
+bg_color = Color(0.415686, 0.415686, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwtcc"]
+bg_color = Color(0.317647, 0.815686, 0.00784314, 1)
+shadow_color = Color(0.317647, 0.815686, 0.00784314, 0.470588)
+shadow_size = 6
+shadow_offset = Vector2(-3, 2)
+anti_aliasing_size = 1.434
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="GameUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_kgckv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lwtcc")
+value = 37.18
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 25
+
+[node name="Circle" type="TextureRect" parent="GameUI/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_83noa")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Node2D" type="Node2D" parent="GameUI/VBoxContainer/MarginContainer/Circle"]
+script = ExtResource("2_ra2k0")
+
+[node name="Cursor" parent="GameUI/VBoxContainer/MarginContainer/Circle" instance=ExtResource("3_cillm")]
+layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/VBoxContainer/MarginContainer/Circle"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -302.5
+offset_right = 302.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ohqg8")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Background" type="TextureRect" parent="GameUI"]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gwh6w")
+expand_mode = 5
+stretch_mode = 6

@@ -1,0 +1,355 @@
+[gd_scene load_steps=4 format=3 uid="uid://eh28lkrqctl7"]
+
+[ext_resource type="Texture2D" uid="uid://bewbxw1b4kryr" path="res://materials/UI/raw/Subtract.png" id="1_gymhb"]
+[ext_resource type="Texture2D" uid="uid://bcbqcknfq8rpl" path="res://materials/UI/raw/Group 849.png" id="1_m7rj5"]
+[ext_resource type="Texture2D" uid="uid://cua33nsvgkir8" path="res://materials/UI/raw/Line 1.png" id="3_y8ana"]
+
+[node name="Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("..")
+focus_neighbor_top = NodePath("..")
+focus_neighbor_right = NodePath("..")
+
+[node name="EditorUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditorUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Settings" type="PanelContainer" parent="EditorUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditorUI/VBoxContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Settings" type="HBoxContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="SavefileContainer" type="HBoxContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MenuButton" type="MenuButton" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SavefileContainer"]
+layout_mode = 2
+text = "File"
+
+[node name="MenuButton2" type="MenuButton" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SavefileContainer"]
+layout_mode = 2
+text = "Edit"
+
+[node name="MenuButton3" type="MenuButton" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SavefileContainer"]
+layout_mode = 2
+text = "View"
+
+[node name="MenuButton4" type="MenuButton" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SavefileContainer"]
+layout_mode = 2
+text = "Editor"
+
+[node name="MenuButton5" type="MenuButton" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SavefileContainer"]
+layout_mode = 2
+text = "Timing"
+
+[node name="SongEditConteiner" type="HBoxContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SongEditConteiner"]
+layout_mode = 2
+text = "COMPOSE"
+
+[node name="Button2" type="Button" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SongEditConteiner"]
+layout_mode = 2
+text = "TIMING"
+
+[node name="Button3" type="Button" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer/SongEditConteiner"]
+layout_mode = 2
+text = "SONG SETUP"
+
+[node name="Button" type="Button" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/Settings/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = " X "
+
+[node name="SongSettings" type="HBoxContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_m7rj5")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Beat Snap Divisor"
+
+[node name="PanelContainer2" type="PanelContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Button" type="Button" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+
+[node name="Label" type="Label" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "1/4"
+
+[node name="Button2" type="Button" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">"
+
+[node name="PanelContainer3" type="PanelContainer" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="EditorUI/VBoxContainer/Settings/VBoxContainer/SongSettings/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "110BPM"
+
+[node name="Main" type="PanelContainer" parent="EditorUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EditorUI/VBoxContainer/Main"]
+layout_mode = 2
+
+[node name="NoteSelector" type="VBoxContainer" parent="EditorUI/VBoxContainer/Main/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/NoteSelector"]
+layout_mode = 2
+text = "Single"
+
+[node name="Button2" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/NoteSelector"]
+layout_mode = 2
+text = "Triple"
+
+[node name="Button3" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/NoteSelector"]
+layout_mode = 2
+text = "Slider"
+
+[node name="Button4" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/NoteSelector"]
+layout_mode = 2
+text = "Reverse"
+
+[node name="EditorZone" type="HBoxContainer" parent="EditorUI/VBoxContainer/Main/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="EditorUI/VBoxContainer/Main/HBoxContainer/EditorZone"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EditorUI/VBoxContainer/Main/HBoxContainer/EditorZone/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="EditorUI/VBoxContainer/Main/HBoxContainer/EditorZone/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("1_gymhb")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Cursor" type="Control" parent="EditorUI/VBoxContainer/Main/HBoxContainer/EditorZone/MarginContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="EditorUI/VBoxContainer/Main/HBoxContainer/EditorZone/MarginContainer/HBoxContainer/TextureRect/Cursor"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_right = 209.0
+offset_bottom = 3.0
+grow_vertical = 2
+texture = ExtResource("3_y8ana")
+expand_mode = 5
+stretch_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="EditorUI/VBoxContainer/Main/HBoxContainer/EditorZone/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HitSoundSelector" type="VBoxContainer" parent="EditorUI/VBoxContainer/Main/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/HitSoundSelector"]
+layout_mode = 2
+text = "Whisle"
+
+[node name="Button2" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/HitSoundSelector"]
+layout_mode = 2
+text = "Finish"
+
+[node name="Button3" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/HitSoundSelector"]
+layout_mode = 2
+text = "Clap"
+
+[node name="HSeparator" type="HSeparator" parent="EditorUI/VBoxContainer/Main/HBoxContainer/HitSoundSelector"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button5" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/HitSoundSelector"]
+layout_mode = 2
+text = "Line Snap"
+
+[node name="Button6" type="Button" parent="EditorUI/VBoxContainer/Main/HBoxContainer/HitSoundSelector"]
+layout_mode = 2
+text = "Note Lock"
+
+[node name="Control" type="PanelContainer" parent="EditorUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="EditorUI/VBoxContainer/Control"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EditorUI/VBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Time" type="Label" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "00:00:00:000"
+
+[node name="MarginContainer2" type="MarginContainer" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SliderPanel" type="PanelContainer" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/MarginContainer2/SliderPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="SongSlider" type="HSlider" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/MarginContainer2/SliderPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+text = "Play"
+
+[node name="Playback Speed" type="VBoxContainer" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Text" type="Label" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/Playback Speed"]
+layout_mode = 2
+text = "Playback Speed"
+
+[node name="Buttons" type="HBoxContainer" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/Playback Speed"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/Playback Speed/Buttons"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "25%"
+
+[node name="Button2" type="Button" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/Playback Speed/Buttons"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "50%"
+
+[node name="Button3" type="Button" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/Playback Speed/Buttons"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "75%"
+
+[node name="Button4" type="Button" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/Playback Speed/Buttons"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "100%"
+
+[node name="Button5" type="Button" parent="EditorUI/VBoxContainer/Control/MarginContainer/HBoxContainer/Playback Speed/Buttons"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "200%"
